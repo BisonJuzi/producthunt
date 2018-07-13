@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if error  %}
+{{ error }}
+<br>
+<br>
+{% endif %}
+
+<h1>Sign Up</h1>
+
+<form class="" action="{% url 'signup'%}" method="post">
+  {% csrf_token %}
+  用&nbsp;&nbsp;户&nbsp;&nbsp;名：
+  <input type="text" name="username" value="">
+  <br>
+  <br>
+  密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：
+  <input type="password" name="password" value="">
+  <br>
+  <br>
+  确认密码：&nbsp;
+  <input type="password" name="confirmpassword" value="">
+  <br>
+  <br>
+  <input class="btn btn-primary btn-lg" type="submit" name="" value="注&nbsp;&nbsp;册">
+</form>
+
+{% endblock %}
